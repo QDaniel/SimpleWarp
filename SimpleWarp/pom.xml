@@ -4,7 +4,7 @@
 
   <groupId>com.cruzbishop</groupId>
   <artifactId>SimpleWarp</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
 
   <name>SimpleWarp</name>
@@ -32,7 +32,7 @@
       <artifactId>ebean</artifactId>
       <version>2.7.3</version>
       <type>jar</type>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 </project>
