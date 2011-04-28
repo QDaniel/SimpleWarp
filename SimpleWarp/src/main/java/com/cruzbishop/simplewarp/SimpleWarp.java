@@ -1,6 +1,8 @@
 
 package com.cruzbishop.simplewarp;
 
+import com.cruzbishop.simplewarp.commands.AddWarpCommand;
+import com.cruzbishop.simplewarp.commands.ListWarpsCommand;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
 import java.util.ArrayList;
@@ -19,6 +21,9 @@ public class SimpleWarp extends JavaPlugin {
 
     public void onEnable() {
         PluginDescriptionFile desc = getDescription();
+        
+        getCommand("listwarps").setExecutor(new ListWarpsCommand(this));
+        getCommand("addwarp").setExecutor(new AddWarpCommand(this));
 
         System.out.println(desc.getFullName() + " has been enabled");
 
