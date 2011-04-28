@@ -3,6 +3,7 @@ package com.cruzbishop.simplewarp;
 import com.avaje.ebean.validation.Length;
 import com.avaje.ebean.validation.NotEmpty;
 import com.avaje.ebean.validation.NotNull;
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -12,7 +13,7 @@ import org.bukkit.World;
 
 @Entity()
 @Table(name="sw_warp")
-public class Warp {
+public class Warp implements Serializable {
     @Id
     private int id;
 
