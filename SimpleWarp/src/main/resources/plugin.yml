@@ -1,6 +1,6 @@
 name: SimpleWarp
 main: com.cruzbishop.simplewarp.SimpleWarp
-version: 1.0.0
+version: 1.0.1
 website: https://github.com/CruzBishop/SimpleWarp
 author: Cruz Bishop
 database: true
