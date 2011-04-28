@@ -4,5 +4,6 @@ version: 0.0.1
 website: https://github.com/CruzBishop/SimpleWarp
 author: Cruz Bishop
 database: true
+depend: {Permissions}
 description: >
              Basic warp functionality

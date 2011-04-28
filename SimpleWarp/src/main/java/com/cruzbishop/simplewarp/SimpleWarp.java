@@ -1,13 +1,19 @@
 
 package com.cruzbishop.simplewarp;
 
+import com.nijiko.permissions.PermissionHandler;
+import com.nijikokun.bukkit.Permissions.Permissions;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.PersistenceException;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class SimpleWarp extends JavaPlugin {
+    
+    public static PermissionHandler permissionHandler;
+    
     public void onDisable() {
     }
 
@@ -16,10 +22,22 @@ public class SimpleWarp extends JavaPlugin {
 
         System.out.println(desc.getFullName() + " has been enabled");
 
-        
+        setupPermissions();
 
         setupDatabase();
     }
+    
+    private void setupPermissions() {
+      Plugin permissionsPlugin = this.getServer().getPluginManager().getPlugin("Permissions");
+
+      if (permissionHandler == null) {
+          if (permissionsPlugin != null) {
+              permissionHandler = ((Permissions) permissionsPlugin).getHandler();
+          } else {
+              System.out.println("Permission system not detected, defaulting to OP");
+          }
+      }
+  }
 
     private void setupDatabase() {
         try {
