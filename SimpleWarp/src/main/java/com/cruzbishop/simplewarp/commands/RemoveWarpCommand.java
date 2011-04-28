@@ -9,16 +9,16 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class WarpCommand implements CommandExecutor {
+public class RemoveWarpCommand implements CommandExecutor {
     private final SimpleWarp plugin;
 
-    public WarpCommand(SimpleWarp plugin) {
+    public RemoveWarpCommand(SimpleWarp plugin) {
         this.plugin = plugin;
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
-        if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.warp")) {
+        if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.remove")) {
             sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
             return true;
         }
@@ -32,10 +32,13 @@ public class WarpCommand implements CommandExecutor {
         Warp warp = plugin.getDatabase().find(Warp.class).where().ieq("name", name).findUnique();
 
         if (warp == null) {
-            sender.sendMessage(ChatColor.RED + "That warp point doesn't look right");
-        } else {
-            ((Player)sender).teleport(warp.getLocation());
+            sender.sendMessage(ChatColor.RED + "That warp doesn't exist anyway!");
+            return true;
         }
+
+        plugin.getDatabase().delete(warp);
+        
+        sender.sendMessage(ChatColor.RED + "Warp \""+warp.getName()+"\" removed!");
 
         return true;
     }

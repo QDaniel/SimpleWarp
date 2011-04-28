@@ -1,6 +1,6 @@
 name: SimpleWarp
 main: com.cruzbishop.simplewarp.SimpleWarp
-version: 0.0.1
+version: 1.0.0
 website: https://github.com/CruzBishop/SimpleWarp
 author: Cruz Bishop
 database: true
@@ -16,6 +16,12 @@ commands:
   addwarp:
     aliases: [createwarp, makewarp]
     description: Adds a new warp point
+    usage: |
+           /<command> <name>
+           Example: /<command> <name>
+  removewarp:
+    aliases: [deletewarp, dwarp]
+    description: Removes a warp point
     usage: |
            /<command> <name>
            Example: /<command> <name>

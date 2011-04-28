@@ -3,6 +3,8 @@ package com.cruzbishop.simplewarp;
 
 import com.cruzbishop.simplewarp.commands.AddWarpCommand;
 import com.cruzbishop.simplewarp.commands.ListWarpsCommand;
+import com.cruzbishop.simplewarp.commands.RemoveWarpCommand;
+import com.cruzbishop.simplewarp.commands.WarpCommand;
 import com.nijiko.permissions.PermissionHandler;
 import com.nijikokun.bukkit.Permissions.Permissions;
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ public class SimpleWarp extends JavaPlugin {
         
         getCommand("listwarps").setExecutor(new ListWarpsCommand(this));
         getCommand("addwarp").setExecutor(new AddWarpCommand(this));
+        getCommand("warp").setExecutor(new WarpCommand(this));
+        getCommand("removewarp").setExecutor(new RemoveWarpCommand(this));
 
         System.out.println(desc.getFullName() + " has been enabled");
 
