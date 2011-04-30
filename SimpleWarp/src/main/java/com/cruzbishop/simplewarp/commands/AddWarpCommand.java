@@ -9,13 +9,33 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+/**
+ * A command that allows you to add warps
+ * @author Cruz Bishop
+ * @version 1.1.0
+ */
 public class AddWarpCommand implements CommandExecutor {
+    /**
+     * The plugin
+     */
     private final SimpleWarp plugin;
 
+    /**
+     * Creates a new instance of this command
+     * @param plugin The base plugin
+     */
     public AddWarpCommand(SimpleWarp plugin) {
         this.plugin = plugin;
     }
 
+    /**
+     * Called when a command is sent
+     * @param sender The sender (AKA player)
+     * @param command The command
+     * @param label The label
+     * @param args The arguments
+     * @return Whether this command succeeded or not
+     */
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
         if (SimpleWarp.usePermissions) {
