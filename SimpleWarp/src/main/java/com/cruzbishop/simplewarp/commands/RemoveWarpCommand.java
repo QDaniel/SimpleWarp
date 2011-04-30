@@ -41,7 +41,7 @@ public class RemoveWarpCommand implements CommandExecutor {
         //No crazy comments in here
         
         if (SimpleWarp.usePermissions) {
-            if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.remove")) {
+            if (!SimpleWarp.permissionHandler.has((Player) sender, "simplewarp.remove")) {
                 sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
                 return true;
             }

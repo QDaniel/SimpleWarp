@@ -39,7 +39,7 @@ public class AddWarpCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
         if (SimpleWarp.usePermissions) {
-            if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.add")) {
+            if (!SimpleWarp.permissionHandler.has((Player) sender, "simplewarp.add")) {
                 sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
                 return true;
             }

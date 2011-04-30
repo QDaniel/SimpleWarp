@@ -41,7 +41,7 @@ public class WarpCommand implements CommandExecutor {
         
         if (SimpleWarp.usePermissions) {
             //OH YES YOU ARE UP TO DATE
-            if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.warp")) {
+            if (!SimpleWarp.permissionHandler.has((Player) sender, "simplewarp.warp")) {
                 //...And you're so ****ing mean! I mean, who would not want players to warp?
                 //Seriously
                 //You're mean

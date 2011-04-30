@@ -40,7 +40,7 @@ public class ListWarpsCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
         if (SimpleWarp.usePermissions) {
-            if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.list")) {
+            if (!SimpleWarp.permissionHandler.has((Player) sender, "simplewarp.list")) {
                 //WHAT THE HELL
                 sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
                 return true;
