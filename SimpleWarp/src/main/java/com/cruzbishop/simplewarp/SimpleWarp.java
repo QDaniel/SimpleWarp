@@ -18,6 +18,8 @@ public class SimpleWarp extends JavaPlugin {
     
     public static PermissionHandler permissionHandler;
     
+    public static boolean usePermissions = true;
+    
     public void onDisable() {
     }
 
@@ -43,7 +45,8 @@ public class SimpleWarp extends JavaPlugin {
           if (permissionsPlugin != null) {
               permissionHandler = ((Permissions) permissionsPlugin).getHandler();
           } else {
-              System.out.println("Permission system not detected, defaulting to OP");
+              System.out.println("WARNING! Permission system not detected, defaulting to OP");
+              usePermissions = false;
           }
       }
   }

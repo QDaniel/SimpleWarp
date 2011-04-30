@@ -18,9 +18,16 @@ public class RemoveWarpCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         
-        if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.remove")) {
-            sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
-            return true;
+        if (SimpleWarp.usePermissions) {
+            if (!SimpleWarp.permissionHandler.has((Player) sender, "cruzbishop.simplewarp.remove")) {
+                sender.sendMessage(ChatColor.RED + "You do not have the rights to use that command");
+                return true;
+            }
+        } else {
+            if (!sender.isOp()) {
+                sender.sendMessage(ChatColor.RED + "Only ops can use this command!");
+                return true;
+            }
         }
         
         if (args.length < 1) {
